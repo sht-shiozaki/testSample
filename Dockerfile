@@ -7,7 +7,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # 実行ステージ
-FROM eclipse-temurin:23-jdk-jammy 
+FROM eclipse-temurin:23-jdk
 WORKDIR /usr/local/lib
 COPY --from=build /home/app/target/*.jar demo.jar
 
